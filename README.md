@@ -10,18 +10,10 @@ I hope this will be useful for you ;)
 
 ## Code Explanation
 
-1. Importing libraries (Probably you will need to install some of them such as Analytics-Zoo and findspark)
+1. Importing libraries (Probably you will need to install some of them such as [Analytics-Zoo]([https://www.google.com](https://analytics-zoo.readthedocs.io/en/latest/doc/UserGuide/python.html)) and [findspark](https://github.com/minrk/findspark))
 2. Initialize Apache spark cluster
 3. Import and reading sentiemnt140 dataset with pandas. (You will need to change dataset's path.)
-
-    Authentication operations were completed with Tweepy module of Python. You must take keys from Twitter API.
-    StreamListener named TweetListener was create for Twitter Streaming. StreamListener produces data for Kafka Topic named 'twitter'.
-    StreamListener also calculates Tweets' sentiment value with AFINN module and sends this value to 'twitter' topic.
-    Producing data was filtered about including desired topic.
-    Kafka Consumer that consumes data from 'twitter' topic was created.
-    Also, it converts streaming data to structured data. This structured data is placed into a SQL table named 'data'.
-    Data table has 2 columns named 'text' and 'senti_val'.
-    Average of sentiment values of senti_val column is calculated by pyspark.sql.functions.
-    Also, user defined function named fun is created for status column.
-    Status column has POSITIVE, NEUTRAL or NEGATIVE that change according to avg(senti_val) column in real-time.
-
+4. Import FastText embeddings with gensim
+5. Pre-processing tweets including cleansing, tokening, padding and vectorizing (This step is implemented in two ways: RDD-based and Dataframe-based.)
+6. Configuration of Apache Cassandra and MongoDB on Apache Spark
+7. Sentiment Analysis models
