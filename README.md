@@ -13,8 +13,8 @@ I hope this will be useful for you ;)
 
 1. Importing libraries (Probably you will need to install some of them such as [`Analytics Zoo`](https://analytics-zoo.readthedocs.io/en/latest/doc/UserGuide/python.html) and [`findspark`](https://github.com/minrk/findspark))
 2. Initialize Apache spark cluster
-3. Import and reading sentiemnt140 dataset with pandas. (You will need to change dataset's path.)
+3. Import and reading sentiemnt140 dataset with pandas. (You will need to change dataset's path)
 4. Import FastText embeddings with gensim
-5. Pre-processing tweets including cleansing, tokening, padding and vectorizing (This step is implemented in two ways: RDD-based and Dataframe-based.)
+5. Pre-processing tweets including cleansing, tokening, padding and vectorizing (This step is implemented in two ways: RDD-based and Dataframe-based)
 6. Configuration of Apache Cassandra and MongoDB on Apache Spark
 7. Sentiment Analysis models
